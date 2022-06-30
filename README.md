@@ -23,3 +23,7 @@ RUSTUP_TOOLCHAIN=nightly maturin build --release -o dist --target wasm32-unknown
 That'll produce a `.whl` in the `dist` folder that should work with Pyodide.
 
 Here's a Colab notebook to compare the demo against: https://colab.research.google.com/github/josephrocca/tokenizers-pyodide/blob/main/demo/Hugging_Face_Tokenizers_Minimal_Test_with_dalle_bart_mini.ipynb
+
+## Todo:
+
+* Fix the threading-related bug: https://github.com/pyodide/pyodide/issues/2816
