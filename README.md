@@ -1,6 +1,8 @@
 # Tokenizers Pyodide/Web Port
 Web/Pyodide port of Hugging Face's Tokenizers lib. Will (hopefully) soon be integrated into the official Pyodide package list so this repo will become likely obsolete.
 
+**Demo:** https://josephrocca.github.io/tokenizers-pyodide/demo
+
 ## Build instructions:
 Visit [this branch](https://github.com/josephrocca/tokenizers/tree/pyodide) and start a Github Codespace on it, then run these commands:
 ```bash
