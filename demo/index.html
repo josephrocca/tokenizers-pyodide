@@ -12,13 +12,9 @@
     window.pyodide = await loadPyodide();
     await pyodide.loadPackage("micropip");
 
-    // Add vocab and merges files to Pyodide filesystem:
-    let vocabText = await fetch(`./vocab.json`).then(r => r.text());
-    let mergesText = await fetch(`./merges.txt`).then(r => r.text());
-    let bertVocabText = await fetch("./bert-base-uncased-vocab.txt").then(r => r.text())
-    pyodide.FS.writeFile("/vocab.json", vocabText, { encoding: "utf8" });
-    pyodide.FS.writeFile("/merges.txt", mergesText, { encoding: "utf8" });
-    pyodide.FS.writeFile("/bert-base-uncased-vocab.txt", bertVocabText, { encoding: "utf8" });
+    // Add tokenizer.json file to Pyodide filesystem:
+    let tokenizerJsonText = await fetch("./tokenizer.json").then(r => r.text())
+    pyodide.FS.writeFile("/tokenizer.json", tokenizerJsonText, { encoding: "utf8" });
 
     console.log(await pyodide.runPythonAsync(`
       import sys
@@ -27,20 +23,12 @@
       import micropip
       await micropip.install('./tokenizers_python-0.11.0-cp310-cp310-emscripten_3_1_14_wasm32.whl')
 
-      from tokenizers import CharBPETokenizer
-      tokenizer = CharBPETokenizer("/vocab.json", "/merges.txt")
-      encoded = tokenizer.encode("I can feel the magic, can you?")
-      print(encoded.ids)
-      print(encoded.tokens)
-      
-      from tokenizers import BertWordPieceTokenizer
-      tokenizer = BertWordPieceTokenizer("/bert-base-uncased-vocab.txt", lowercase=True)
+      from tokenizers import Tokenizer
+      tokenizer = Tokenizer.from_file("/tokenizer.json")
       encoded = tokenizer.encode("I can feel the magic, can you?")
       print(encoded.ids)
       print(encoded.tokens)
     `));
-
-    console.log(pyodide.runPython("print(1 + 2)"));
   </script>
 </body>
 </html>
