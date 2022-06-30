@@ -1,5 +1,5 @@
-# Tokenizers Pyodide/Web Port (WIP - not working yet)
-Web/Pyodide port of Hugging Face's Tokenizers lib. Will (hopefully) soon be integrated into the official Pyodide package list so this repo will become likely obsolete.
+# Tokenizers Pyodide/Wasm/Web Port (WIP - not working yet)
+Web/Pyodide port of Hugging Face's Tokenizers lib. Will (hopefully) soon be integrated into the official Pyodide package list so this repo will hopefully become obsolete.
 
 **Demo:** https://josephrocca.github.io/tokenizers-pyodide/demo
 
