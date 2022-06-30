@@ -11,6 +11,7 @@
   <script>
     async function main() {
       let pyodide = await loadPyodide();
+      await pyodide.loadPackage("micropip");
       
       // Add vocab and merges files to Pyodide filesystem:
       let vocabText = await fetch(`./vocab.json`).then(r => r.text());
