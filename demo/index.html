@@ -21,7 +21,7 @@
       print(sys.version)
       
       import os
-      os.environ["TOKENIZERS_PARALLELISM"] = "0"
+      os.environ["TOKENIZERS_PARALLELISM"] = "0" # This is needed because threading doesn't work in Pyodide yet: https://github.com/pyodide/pyodide/issues/2816#issue-1290719241
 
       import micropip
       await micropip.install('./tokenizers_python-0.11.0-cp310-cp310-emscripten_3_1_14_wasm32.whl')
