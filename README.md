@@ -3,6 +3,15 @@ Web/Pyodide port of Hugging Face's Tokenizers lib. Will (hopefully) soon be inte
 
 **Demo:** https://josephrocca.github.io/tokenizers-pyodide/demo
 
+Thanks to @Narsil, @mbrunel, and @messense for making this possible.
+
+ * @Narsil: https://github.com/huggingface/tokenizers/pull/1009
+ * @mbrunel: https://github.com/mithril-security/tokenizers-wasm
+ * Discussion: 
+   * https://github.com/huggingface/tokenizers/issues/935
+   * https://github.com/huggingface/tokenizers/issues/63
+   * https://github.com/huggingface/tokenizers/issues/1010
+
 ## Build instructions:
 Visit [this branch](https://github.com/josephrocca/tokenizers/tree/pyodide) and start a Github Codespace on it, then run these commands:
 ```bash
