@@ -1,4 +1,4 @@
-# Tokenizers Pyodide/Wasm/Web Port (WIP - not working yet)
+# Tokenizers Pyodide/Wasm/Web Port
 Web/Pyodide port of Hugging Face's Tokenizers lib. Will (hopefully) soon be integrated into the official Pyodide package list so this repo will hopefully become obsolete.
 
 **Demo:** https://josephrocca.github.io/tokenizers-pyodide/demo
@@ -24,6 +24,6 @@ That'll produce a `.whl` in the `dist` folder that should work with Pyodide.
 
 Here's a Colab notebook to compare the demo against: https://colab.research.google.com/github/josephrocca/tokenizers-pyodide/blob/main/demo/Hugging_Face_Tokenizers_Minimal_Test_with_dalle_bart_mini.ipynb
 
-## Todo:
+## Notes:
 
-* Fix the threading-related bug: https://github.com/pyodide/pyodide/issues/2816
+* Here's the issue that tracks tokenizers' eventual addition to official Pyodide package repo: https://github.com/pyodide/pyodide/issues/2816
